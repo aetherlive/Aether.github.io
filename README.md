@@ -39,9 +39,8 @@
     </style>
 </head>
 <body>
-    <div class="image-container">
-        <!-- Replace 'your-image.jpg' with your actual image file -->
-        <img src="https://ibb.co/v6ZFcdFj">
+    
+        <img src="https://i.ibb.co/xtJk2gk7/text-1739414566378.png">
     </div>
     
     <div class="contact-footer">
