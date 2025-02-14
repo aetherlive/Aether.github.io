@@ -3,48 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AetherLive Contact</title>
+    <title>ÆTHER | Electronic Music Production</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-            background-color: #808080;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            box-sizing: border-box;
         }
 
-        .image-container {
+        body {
+            background: #000;
+            font-family: 'Space Mono', monospace;
+            color: #0ff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            flex-grow: 1;
-        }
-
-        .contact-footer {
-            background-color: #666666;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-family: Arial, sans-serif;
+            justify-content: center;
+            position: relative;
         }
 
         img {
-            max-width: 100%;
-            max-height: 80vh;
-            width: auto;
+            max-width: 80vw;
             height: auto;
+            filter: grayscale(100%) contrast(130%);
+            transition: filter 0.8s;
+            border: 3px solid #f0f;
         }
+
+        img:hover {
+            filter: grayscale(0%) contrast(100%);
+        }
+
+        .contact {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            text-align: center;
+            mix-blend-mode: difference;
+        }
+
+        a {
+            color: #f0f;
+            text-decoration: none;
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0ff;
+            transition: width 0.3s;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .scanline {
+            position: fixed;
+            width: 100%;
+            height: 2px;
+            background: #0ff;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% { top: -2px; }
+            100% { top: 100%; }
+        }
+
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inconsolata:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="scanline"></div>
     
-        <img src="https://i.ibb.co/xtJk2gk7/text-1739414566378.png">
+    <div class="container">
+        <img src="https://i.ibb.co/xtJk2gk7/text-1739414566378.png" alt="ÆTHER">
     </div>
-    
-    <div class="contact-footer">
-        <p>Contact us at: <a href="mailto:booking@aetherlive.net">booking@aetherlive.net</a></p>
+
+    <div class="contact">
+        <a href="mailto:booking@aetherlive.net">BOOKING@AETHERLIVE.NET</a>
     </div>
+
 </body>
 </html>
