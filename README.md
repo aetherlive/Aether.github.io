@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÆTHER | Electronic Music Production</title>
+    <title>ÆTHER</title>
     <style>
         * {
             margin: 0;
@@ -12,82 +12,77 @@
         }
 
         body {
-            background: #000;
-            font-family: 'Space Mono', monospace;
-            color: #0ff;
-            overflow-x: hidden;
+            background: #fff;
+            font-family: 'Archivo Black', sans-serif;
+            color: #111;
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: 1fr auto;
         }
 
         .container {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            display: grid;
+            place-items: center;
+            padding: 2rem;
         }
 
         img {
-            max-width: 80vw;
+            max-width: min(90vw, 800px);
             height: auto;
-            filter: grayscale(100%) contrast(130%);
-            transition: filter 0.8s;
-            border: 3px solid #f0f;
+            border: 4px solid #111;
+            box-shadow: 12px 12px 0px #e63946;
+            transition: transform 0.3s ease;
         }
 
         img:hover {
-            filter: grayscale(0%) contrast(100%);
+            transform: rotate(-0.5deg);
         }
 
         .contact {
-            position: fixed;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2rem;
             text-align: center;
-            mix-blend-mode: difference;
+            padding: 3rem;
+            border-top: 4px solid #111;
+            background: #f8f9fa;
         }
 
         a {
-            color: #f0f;
+            color: #e63946;
             text-decoration: none;
+            font-size: 1.5rem;
             position: relative;
+            padding: 0.5rem 1rem;
+            display: inline-block;
         }
 
-        a::after {
+        a::before {
             content: '';
             position: absolute;
-            bottom: -2px;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #111;
+            top: 4px;
+            left: 4px;
+            transition: all 0.3s ease;
+        }
+
+        a:hover::before {
+            top: 0;
             left: 0;
-            width: 0;
-            height: 2px;
-            background: #0ff;
-            transition: width 0.3s;
         }
 
-        a:hover::after {
-            width: 100%;
+        @media (max-width: 768px) {
+            img {
+                box-shadow: 6px 6px 0px #e63946;
+            }
+            
+            a {
+                font-size: 1.2rem;
+            }
         }
-
-        .scanline {
-            position: fixed;
-            width: 100%;
-            height: 2px;
-            background: #0ff;
-            animation: scan 4s linear infinite;
-        }
-
-        @keyframes scan {
-            0% { top: -2px; }
-            100% { top: 100%; }
-        }
-
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inconsolata:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="scanline"></div>
-    
     <div class="container">
         <img src="https://i.ibb.co/xtJk2gk7/text-1739414566378.png" alt="ÆTHER">
     </div>
@@ -95,6 +90,5 @@
     <div class="contact">
         <a href="mailto:booking@aetherlive.net">BOOKING@AETHERLIVE.NET</a>
     </div>
-
 </body>
 </html>
