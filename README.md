@@ -41,7 +41,7 @@
 <body>
     <div class="image-container">
         <!-- Replace 'your-image.jpg' with your actual image file -->
-        <img src="your-image.jpg" alt="Company Logo">
+        <img src="https://ibb.co/v6ZFcdFj">
     </div>
     
     <div class="contact-footer">
