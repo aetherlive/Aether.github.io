@@ -5,90 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ÆTHER</title>
     <style>
+        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :root {
+            --primary: #0a0a0a;
+            --accent: #ff375f;
+            --spacing: 2rem;
         }
 
         body {
-            background: #fff;
-            font-family: 'Archivo Black', sans-serif;
-            color: #111;
+            background: #ffffff;
+            font-family: 'Neue Machina', system-ui, sans-serif;
+            color: var(--primary);
+            line-height: 1.2;
+            overflow-x: hidden;
+        }
+
+        /* Layout structure */
+        .frame {
             min-height: 100vh;
             display: grid;
-            grid-template-rows: 1fr auto;
+            grid-template-rows: auto 1fr auto;
+            padding: var(--spacing);
         }
 
-        .container {
-            display: grid;
-            place-items: center;
-            padding: 2rem;
+        /* Logo treatment */
+        .logo-container {
+            position: relative;
+            margin: 10vh auto;
+            max-width: 1200px;
+            isolation: isolate;
         }
 
-        img {
-            max-width: min(90vw, 800px);
+        .logo-container img {
+            width: 100%;
             height: auto;
-            border: 4px solid #111;
-            box-shadow: 12px 12px 0px #e63946;
-            transition: transform 0.3s ease;
+            filter: contrast(120%);
+            border: 1px solid var(--primary);
+            box-shadow: 16px 16px 0 var(--accent);
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        img:hover {
-            transform: rotate(-0.5deg);
+        .logo-container:hover img {
+            transform: translate(-8px, -8px);
+            box-shadow: 24px 24px 0 var(--accent);
         }
 
+        /* Contact section */
         .contact {
             text-align: center;
-            padding: 3rem;
-            border-top: 4px solid #111;
-            background: #f8f9fa;
+            padding: calc(var(--spacing) * 2) 0;
+            position: relative;
         }
 
-        a {
-            color: #e63946;
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: var(--primary);
+        }
+
+        .contact a {
+            color: var(--primary);
             text-decoration: none;
             font-size: 1.5rem;
+            letter-spacing: -0.03em;
             position: relative;
-            padding: 0.5rem 1rem;
+            padding: 0.75rem 2rem;
             display: inline-block;
         }
 
-        a::before {
+        .contact a::after {
             content: '';
             position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 2px solid #111;
-            top: 4px;
-            left: 4px;
-            transition: all 0.3s ease;
-        }
-
-        a:hover::before {
-            top: 0;
+            bottom: 0;
             left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease-out;
         }
 
+        .contact a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* Responsive adjustments */
         @media (max-width: 768px) {
-            img {
-                box-shadow: 6px 6px 0px #e63946;
+            :root {
+                --spacing: 1rem;
             }
-            
-            a {
-                font-size: 1.2rem;
+
+            .logo-container img {
+                box-shadow: 8px 8px 0 var(--accent);
+            }
+
+            .logo-container:hover img {
+                transform: translate(-4px, -4px);
+                box-shadow: 12px 12px 0 var(--accent);
             }
         }
+
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/neue-machina" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <img src="https://i.ibb.co/xtJk2gk7/text-1739414566378.png" alt="ÆTHER">
-    </div>
+    <div class="frame">
+        <main class="logo-container">
+            <img src="https://i.ibb.co/xtJk2gk7/text-1739414566378.png" alt="ÆTHER agency logo">
+        </main>
 
-    <div class="contact">
-        <a href="mailto:booking@aetherlive.net">BOOKING@AETHERLIVE.NET</a>
+        <footer class="contact">
+            <a href="mailto:booking@aetherlive.net">BOOKING@AETHERLIVE.NET</a>
+        </footer>
     </div>
 </body>
 </html>
